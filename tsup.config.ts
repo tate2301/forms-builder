@@ -2,19 +2,20 @@ import childProcess from "node:child_process";
 import fs from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { type Options, defineConfig } from "tsup";
+import { type Format, defineConfig } from "tsup";
 
-const common: Options = {
+const common = {
 	entry: ["src/index.ts"],
-	treeshake: false,
-	sourcemap: "inline",
-	minify: true,
-	clean: true,
+	format: ["cjs", "esm"] as Format[],
 	dts: true,
 	splitting: false,
-	format: ["cjs", "esm"],
+	sourcemap: true,
+	clean: true,
 	external: ["react"],
-	injectStyle: false,
+	injectStyle: true,
+	esbuildOptions(options: any) {
+		options.outbase = "./src";
+	},
 };
 
 const getPackageName = async () => {

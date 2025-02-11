@@ -6,6 +6,11 @@
 		"moduleResolution": "Bundler",
 		"skipLibCheck": true,
 		"strict": true,
-		"noEmit": true
-	}
+		"noEmit": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"include": ["./src/**/*", "*.ts", "*.js"],
+	"exclude": ["./src/**/*.spec.ts"]
 }

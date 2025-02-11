@@ -1,11 +1,17 @@
+import { Example } from "@/Example";
 import type { Meta, StoryFn } from "@storybook/react";
-
-import { Example } from "..";
+import { FormProvider } from "../forms-builder/context";
 
 export default {
 	title: "Example",
 	component: Example,
-	argTypes: {},
+	decorators: [
+		(Story) => (
+			<FormProvider>
+				<Story />
+			</FormProvider>
+		),
+	],
 } as Meta<typeof Example>;
 
 const Template: StoryFn<typeof Example> = (args) => <Example {...args} />;
@@ -13,5 +19,5 @@ const Template: StoryFn<typeof Example> = (args) => <Example {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-	text: "Clicked this many times:",
+	text: "Example Form",
 };

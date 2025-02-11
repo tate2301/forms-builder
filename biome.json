@@ -38,12 +38,9 @@
 			"style": {
 				"noDefaultExport": "off",
 				"useFilenamingConvention": "off",
-				"useNamingConvention": {
-					"level": "error",
-					"options": {
-						"strictCase": false
-					}
-				}
+				"useNamingConvention": "off",
+				"noNamespaceImport": "off",
+				"noParameterAssign": "off"
 			},
 			"performance": {
 				"noReExportAll": "off",
@@ -51,20 +48,23 @@
 			},
 			"suspicious": {
 				"noReactSpecificProps": "off",
-				"noConsole": {
-					"fix": "none",
-					"level": "warn"
-				},
 				"noConsoleLog": {
 					"fix": "none",
 					"level": "warn"
-				}
+				},
+				"noEmptyBlockStatements": "off",
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off"
 			},
 			"correctness": {
 				"useImportExtensions": "off",
 				"noUndeclaredDependencies": "off",
 				"noUnusedVariables": "off",
 				"noNodejsModules": "off"
+			},
+			"a11y": {
+				"useKeyWithClickEvents": "off",
+				"useKeyWithMouseEvents": "off"
 			}
 		}
 	},
